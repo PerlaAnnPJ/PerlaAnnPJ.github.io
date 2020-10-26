@@ -1,0 +1,59 @@
+---
+title: "Graficando columnas específicas"
+author: "Perla Perez."
+date: "26/10/2020"
+output: html_document
+---
+
+## Conociendo las variables
+
+R tiene algunas bases de datos integradas, por ejemplo `mtcars`:
+
+```{r}
+?mtcars
+```
+
+Esta es la base de datos
+
+```{r}
+mtcars
+```
+
+## Graficando `mtcars`
+
+```{r}
+plot(mtcars)
+```
+
+## 1. Graficando la combinación que más nos gustó
+
+Me parecio interesante la forma en que se contrapondrian las variables.
+
+```{r}
+plot(mtcars$hp,mtcars$gear, type = "o",main="Grafica combinación", sub="Fuente: Elaboración propia", 
+     xlab="x", ylab="y", col="54")
+```
+
+## 2. Graficando la función que se asemeja más a la combinación que más nos gustó
+
+Creo que se parecen por las partes planas y las pendientes
+
+```{r}
+x<-(-5:5)
+nx<-sin(x)
+plot(x,nx, main="Función asemejada", sub="Fuente: elaboración propia", 
+     xlab="x", ylab="y", col="45", type="o")
+```
+
+## 3. Multiplicando las variables que elegimos para la gráfica
+
+```{r}
+producto<-mtcars$hp*mtcars$gear
+```
+
+## 3. Graficando el Producto
+
+```{r}
+plot(producto, type = "o",main="Grafica Producto", sub="Fuente: Elaboración propia", 
+     xlab="x", ylab="y", col="green")
+```
